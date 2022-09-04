@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# docs: https://git-scm.com/docs/githooks#_pre_commit
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+# code style
+echo "Running code lint and style..."
+yarn lint
+yarn style
+
+# tests
+echo "Running testing and coverage..."
+yarn test:cov
+

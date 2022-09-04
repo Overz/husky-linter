@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# docs: https://git-scm.com/docs/githooks#_commit_msg
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running commit linter..."
+npx --no -- commitlint --edit "${1}"
